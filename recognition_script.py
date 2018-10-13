@@ -18,16 +18,15 @@ if filename.endswith('.mov') or filename.endswith('.mp4'):
 print("***Video Completed***")
 
 print("***Extracting .wav***")
-command = "ffmpeg -i ./%s -vn -acodec pcm_s16le ./temp_vid_imgs/temp_audio.wav" % filename
+command = "ffmpeg -i %s -vn -acodec pcm_s16le ./temp_vid_imgs/temp_audio.wav" % filename
 subprocess.call(command, shell=True)
 print("***Wav Completed***")
 
-if(sys.argv[2] != '--dry-run'):
-    print("***Deleting Old Files***")
-    for the_file in os.listdir(temp_file_path):
-        file_path = os.path.join(temp_file_path, the_file)
-        try:
-            if os.path.isfile(file_path):
-                os.unlink(file_path)
-        except Exception as e:
-            print(e)
+print("***Deleting Old Files***")
+for the_file in os.listdir(temp_file_path):
+    file_path = os.path.join(temp_file_path, the_file)
+    try:
+        if os.path.isfile(file_path):
+            os.unlink(file_path)
+    except Exception as e:
+        print(e)
