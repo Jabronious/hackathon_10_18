@@ -17,7 +17,7 @@ def __init__(self, group_name, key, location):
     self.GROUP_NAME = group_name
 
     # Define Face-API Specific Global Variables
-    self.FACE_API_KEY = "06a02dcf749e47ae98e737eb5b6cbec1"
+    self.FACE_API_KEY = key
     self.FACE_API_URL = 'https://%s.api.cognitive.microsoft.com/face/v1.0' % (location)
     self.HEADERS = {
         'Ocp-Apim-Subscription-Key': self.FACE_API_KEY,
