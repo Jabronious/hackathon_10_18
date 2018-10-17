@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from FaceApiWrapper import FaceApiWrapper
 import cv2
 import sys
 import os
@@ -21,6 +22,14 @@ print("***Extracting .wav***")
 command = "ffmpeg -i %s -vn -acodec pcm_s16le ./temp_vid_imgs/temp_audio.wav" % filename
 subprocess.call(command, shell=True)
 print("***Wav Completed***")
+
+#face_api = FaceAPI("cool group bruh", "06a02dcf749e47ae98e737eb5b6cbec1", "eastus2")
+#if(sys.argv[2] == 'train'):
+#    print("train")
+#elif(sys.argv[2] == 'verify'):
+#    print("verify")
+#elif sys.argv[2] == 'insert_person':
+#    print("insert")
 
 print("***Deleting Old Files***")
 for the_file in os.listdir(temp_file_path):
